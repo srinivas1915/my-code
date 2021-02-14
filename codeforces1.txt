@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+void solve()
+{
+	int n,l=1,r,a[100002],m;
+	cin>>n;
+	r = n;
+	a[0] = n+1,a[n+1] = n+1; 
+	while(true)
+	{
+		m = (l+r)/2;
+		cout<<"? "<<m<<endl;
+		cout.flush();
+		if(m+1<=n)
+		{
+	    cout<<"? "<<m+1<<endl;
+		cout.flush();
+	    }
+	    cout.flush();
+		if(m-1>=1)
+		{
+		cout<<"? "<<m-1<<endl;
+		cout.flush();
+	    }
+	    cout.flush();
+		if(m==1) cin>>a[m]>>a[m+1];
+		else if(m==n) cin>>a[m]>>a[m-1];
+		else cin>>a[m]>>a[m+1]>>a[m-1];
+		if(a[m]<min(a[m+1],a[m-1]))
+		{
+			cout<<"! "<<m<<endl;
+			cout.flush();
+			break;
+		}
+		else if(a[m]>a[m-1]) r = m-1;
+		else l = m+1;
+	}
+	cout.flush();
+}
+
+int main()
+{
+	solve();
+}
