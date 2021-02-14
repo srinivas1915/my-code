@@ -1,0 +1,3 @@
+new file
+this is a sample text file
+lets learn basic git hub commands
